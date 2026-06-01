@@ -7,7 +7,7 @@ export default defineConfig({
   reporter: 'html',
   use: {
     baseURL: 'https://automationintesting.online',
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
