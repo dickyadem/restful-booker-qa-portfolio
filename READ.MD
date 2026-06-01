@@ -55,3 +55,7 @@ restful-booker-portfolio/
 - Jalankan request sesuai urutan: `CreateToken` > `GetAllBookings` > `GetBookingById` > `CreateBooking` > `UpdateBooking` > `DeleteBooking`
 - Token dan booking ID tersimpan otomatis via environment variables
 - Server Restful Booker bersifat publik dan di-reset berkala
+
+#  Restful Booker - API Testing Portfolio
+
+![Playwright Tests](https://github.com/USERNAME/restful-booker-qa-portfolio/actions/workflows/playwright.yml/badge.svg)
