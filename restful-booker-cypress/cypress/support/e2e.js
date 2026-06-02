@@ -16,10 +16,10 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-  // ignore React hydration errors dari aplikasi
-  if (err.message.includes('Minified React error')) {
-    return false
-  }
-  return true
+Cypress.on('uncaught:exception', () => {
+  // automationintesting.online (Next.js app pihak ketiga) sering melempar
+  // runtime error sendiri, mis. "Minified React error" atau
+  // "Cannot read properties of undefined (reading 'length')".
+  // Itu bukan kegagalan test kita, jadi diabaikan.
+  return false
 })

@@ -19,7 +19,15 @@ describe('Restful Booker - UI Tests', () => {
   })
 
   it('Complete reservation flow', () => {
-    cy.get('a[href*="/reservation/1"]').click()
+    // pakai rentang tanggal future unik supaya tidak bentrok dengan booking
+    // sebelumnya di situs live (kalau bentrok, konfirmasi tidak muncul)
+    const fmt = (d) => d.toISOString().slice(0, 10)
+    const offset = Cypress._.random(30, 365)
+    const checkin = new Date()
+    checkin.setDate(checkin.getDate() + offset)
+    const checkout = new Date(checkin)
+    checkout.setDate(checkout.getDate() + 1)
+    cy.visit(`/reservation/1?checkin=${fmt(checkin)}&checkout=${fmt(checkout)}`)
     cy.get('button').contains('Reserve Now').click()
     cy.get('input[name="firstname"]').type('Ade')
     cy.get('input[name="lastname"]').type('Mahen')

@@ -8,5 +8,9 @@ module.exports = defineConfig({
     viewportHeight: 720,
     defaultCommandTimeout: 10000,
     video: false,
+    excludeSpecPattern: [
+      'cypress/e2e/1-getting-started/**',
+      'cypress/e2e/2-advanced-examples/**',
+    ],
   },
 })
