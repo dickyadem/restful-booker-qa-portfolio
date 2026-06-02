@@ -1,0 +1,3 @@
+com\restfulbooker\AppTest.class
+com\restfulbooker\tests\BookingTest.class
+com\restfulbooker\pages\BookingPage.class
